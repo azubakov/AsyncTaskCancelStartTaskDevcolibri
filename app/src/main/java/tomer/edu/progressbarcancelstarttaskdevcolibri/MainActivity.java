@@ -1,5 +1,6 @@
 package tomer.edu.progressbarcancelstarttaskdevcolibri;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.Toast;
 
 import tomer.edu.progressbarcancelstarttaskdevcolibri.asynctask.MyAsyncTask;
 
+//AppCompatActivity
 public class MainActivity extends AppCompatActivity {
 
     private MyAsyncTask task;
@@ -16,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        task = new MyAsyncTask();
+        //task = new MyAsyncTask(this);
+        task = MyAsyncTask.getInstance(this);
+       // task.execute();
 
     }
 
